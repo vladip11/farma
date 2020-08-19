@@ -6,8 +6,8 @@ require '../config/conexion.php';
 Class Articulo{
 	public function __construct(){}
 
-	public function insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen){
-		$sql = "INSERT INTO articulo(idcategoria, codigo, nombre, stock, descripcion, imagen, condicion) VALUES($idcategoria, '$codigo','$nombre','$stock', '$descripcion', '$imagen', '1')";
+	public function insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen,$ubicacion){
+		$sql = "INSERT INTO articulo(idcategoria, codigo, nombre, stock, descripcion, imagen, ubicacion, condicion) VALUES($idcategoria, '$codigo','$nombre','$stock', '$descripcion', '$imagen', '$ubicacion', '1')";
 		return ejecutarConsulta($sql);
 	}
 
@@ -36,7 +36,7 @@ Class Articulo{
 	}
 
 	public function listar(){
-		$sql = "SELECT a.idarticulo, a.idcategoria, c.nombre as categoria, a.codigo, a.nombre, a.stock, a.descripcion, a.imagen, a.condicion FROM articulo a INNER JOIN categoria c ON a.idcategoria = c.idcategoria";
+		$sql = "SELECT a.idarticulo, a.idcategoria, c.nombre as categoria, a.codigo, a.nombre, a.stock, a.descripcion, a.imagen,a.ubicacion, a.condicion FROM articulo a INNER JOIN categoria c ON a.idcategoria = c.idcategoria";
 		return ejecutarConsulta($sql);
 
 

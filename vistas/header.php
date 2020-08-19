@@ -197,6 +197,19 @@
             '; 
             }           
             ?>
+            <?php
+                echo '<li class="treeview">
+              <a href="#">
+                <i class="fa fa-bar-chart"></i> <span>Reporte de Productos</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="reporteProductos.php"><i class="fa fa-circle-o"></i> Reporte de Productos</a></li>                
+              </ul>
+            </li>
+            '; 
+                       
+            ?>
             <!--
             <li>
               <a href="#">

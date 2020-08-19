@@ -40,6 +40,7 @@ if($_SESSION['almacen']==1)
                             <th>Stock</th>
                             <th>Descripcion</th>
                             <th>Fecha de Vencimiento</th>
+                            <th>Ubicacion</th>
                             <th>Condicion</th>
                           </thead>
                           
@@ -56,6 +57,7 @@ if($_SESSION['almacen']==1)
                             <th>Stock</th>
                             <th>Descripcion</th>
                             <th>Fecha de Vencimiento</th>
+                            <th>Ubicacion</th>
                             <th>Condicion</th>
                           </tfoot>
 
@@ -114,12 +116,14 @@ if($_SESSION['almacen']==1)
                               </svg>
                             </div>-->
                           </div>
+                          <div class="form-group col-sm-6 col-xs-12">
+                            <label for="ubicacion">Ubicacion</label>
+                            <input type="text" class="form-control" name="ubicacion" id="ubicacion" placeholder="ubicacion" max="300">
+                          </div>
+                          <div class="clearfix"></div>
                           <div class="form-group col-12">
                             <button class="btn btn-primary" type="submit" id="btn-guardar" onclick="insertarForm(event);">Guardar</button>
-                            
                             <button class="btn btn-warning" type="submit" id="btn-editar" onclick="editarForm(event);">Editar</button>
-                            
-                            
                             <button class="btn btn-danger" type="submit" id="btn-cerrar" onclick="cancelarForm();">Cerrar </button>
                             
                           </div>

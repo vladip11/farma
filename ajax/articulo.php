@@ -11,6 +11,7 @@ $nombre = isset($_POST['nombre'])?limpiarCadena($_POST['nombre']):"";
 $stock = isset($_POST['stock'])?limpiarCadena($_POST['stock']):"";
 $descripcion = isset($_POST['descripcion'])?limpiarCadena($_POST['descripcion']):"";
 $imagen = isset($_POST['imagen'])?limpiarCadena($_POST['imagen']):"";
+$ubicacion = isset($_POST['ubicacion'])?limpiarCadena($_POST['ubicacion']):"";
 
 switch ($_GET['opcion']) {
 	case 'insertar':
@@ -29,7 +30,7 @@ switch ($_GET['opcion']) {
 			}
 
 		}*/
-		$respuesta = $articulo->insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen);	
+		$respuesta = $articulo->insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen,$ubicacion);	
 		if ($respuesta) 
 				echo "Se inserto correctamente";
 		else 
@@ -91,8 +92,9 @@ switch ($_GET['opcion']) {
 							"3" => $fila->nombre,
 							"4" => $fila->stock,
 							"5" => $fila->descripcion,
-							"6" => "<img src='../files/articulos/".$fila->imagen."' height='50px' width = '50px'>",
-							"7" => $fila->condicion?'<small class="label bg-green">Activado</small>':'<small class="label bg-red">Desactivado</small>'
+							"6" => $fila->imagen,
+							"7" => $fila->ubicacion,
+							"8" => $fila->condicion?'<small class="label bg-green">Activado</small>':'<small class="label bg-red">Desactivado</small>'
 						);
 		}
 
